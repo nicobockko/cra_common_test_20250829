@@ -18,7 +18,7 @@ Ian friday
 Xena saturday
 Vera saturday
 Nina sunday
-Bob sunday
+Bob friday
 Ethan friday
 Xena sunday
 Nina wednesday
@@ -175,7 +175,7 @@ Alice saturday
 Alice saturday
 Daisy sunday
 Tina monday
-Bob wednesday
+Bob monday
 Ethan monday
 Alice sunday
 Hannah sunday
@@ -271,7 +271,7 @@ Ethan thursday
 Will saturday
 Ethan thursday
 Hannah sunday
-Bob friday
+Bob thursday
 Ethan wednesday
 Rachel friday
 Xena monday
@@ -440,7 +440,7 @@ Alice tuesday
 Charlie sunday
 Oscar thursday
 Daisy tuesday
-Bob wednesday
+Bob monday
 Xena friday
 Steve monday
 Rachel monday
