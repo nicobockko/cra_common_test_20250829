@@ -91,7 +91,7 @@ void input() {
 	}
 
 	for (int i = 1; i <= id_cnt; i++) {
-		if (dat[i][3] > 9) {
+		if (dat[i][2] > 9) {
 			points[i] += 10;
 		}
 		
