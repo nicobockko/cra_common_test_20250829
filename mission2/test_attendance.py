@@ -71,8 +71,7 @@ def test_get_gold_medal(club):
     assert member.medal == "GOLD"
 
 
-def test_kickout_member(capsys):
-    club = Club()
+def test_kickout_member(club, capsys):
     james = club.membermanager.get_member('james')
     michael = club.membermanager.get_member('michael')
     james.attend('monday')
@@ -83,8 +82,7 @@ def test_kickout_member(capsys):
     assert "michael" not in out
 
 
-def test_announce_all_members_score_medal(capsys):
-    club = Club()
+def test_announce_all_members_score_medal(club,capsys):
     club.membermanager.get_member('james')
     club.announce_all_members_score_medal()
     out, err = capsys.readouterr()
