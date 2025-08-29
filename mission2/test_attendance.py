@@ -62,7 +62,7 @@ def test_get_silver_medal(club):
     assert member.medal == "SILVER"
 
 
-def test_get_silver_gold(club):
+def test_get_gold_medal(club):
     member = club.membermanager.get_member('james')
     for i in range(50):
         member.attend('monday')
