@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 BONUS_POINT = 10
 MAX_PEOPLE_NUM = 100
 DEFALT_MEDAL = 'NORMAL'
@@ -56,15 +58,29 @@ class PointCalculator:
             return BONUS_POINT
         return 0
 
+class Medal(ABC):
+    @abstractmethod
+    def __init__(self):
+        self.name = ''
+
+class NormalMedal(Medal):
+    def __init__(self):
+        self.name = 'NORMAL'
+class SilverMedal(Medal):
+    def __init__(self):
+        self.name = 'SILVER'
+class GoldMedal(Medal):
+    def __init__(self):
+        self.name = 'GOLD'
 
 class MedalCreator:
     @classmethod
-    def make_medal(self, point) -> str:
+    def make_medal(self, point) -> Medal:
         if point >= 50:
-            return "GOLD"
+            return GoldMedal()
         if point >= 30:
-            return "SILVER"
-        return DEFALT_MEDAL
+            return SilverMedal()
+        return NormalMedal()
 
 
 class Club:
@@ -82,7 +98,7 @@ class Club:
             wednes_cnt = member.weekdays['wednesday']
             weekends_cnt = member.weekdays['saturday'] + member.weekdays['sunday']
             member.point += self.pg.get_bonus(wednes_cnt) + self.pg.get_bonus(weekends_cnt)
-            member.medal = self.mc.make_medal(member.point)
+            member.medal = self.mc.make_medal(member.point).name
 
     def announce_all_members_score_medal(self):
         for member in self.members.values():
